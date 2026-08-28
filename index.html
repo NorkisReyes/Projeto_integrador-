@@ -217,3 +217,636 @@ Projeto Integrador • 2026
 
 </body>
 </html>
+<!DOCTYPE html> <html lang="pt-BR"> <head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Projeto de acessibilidade digital e recursos para pessoas com baixa visão"
+>
+
+<title>Acesso à Visão e Acessibilidade Digital</title>
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style.css">
+
+</head> <body> <header class="bg-primary text-white py-4">
+<div class="container">
+
+    <h1 class="text-center">
+        Acesso à Visão
+    </h1>
+
+    <p class="text-center fs-5">
+        Informação, inclusão e acessibilidade para todos
+    </p>
+
+
+    <div
+        class="d-flex justify-content-center gap-2 flex-wrap mt-3"
+        aria-label="Ferramentas de acessibilidade"
+    >
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="aumentarFonte()"
+        >
+            A+
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="diminuirFonte()"
+        >
+            A-
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-warning"
+            onclick="alternarContraste()"
+        >
+            Alto Contraste
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-success"
+            onclick="lerPagina()"
+        >
+            🔊 Ouvir Página
+        </button>
+
+    </div>
+
+</div>
+
+</header> <main class="container my-5">
+<!-- INTRODUÇÃO -->
+
+<section
+    class="mb-5"
+    aria-labelledby="introducao"
+>
+
+    <h2 id="introducao">
+        O que é acesso à visão?
+    </h2>
+
+    <p>
+        O acesso à visão está relacionado à possibilidade de uma pessoa
+        receber informações visuais e utilizar ambientes, tecnologias e
+        serviços de forma segura, independente e acessível.
+    </p>
+
+    <p>
+        Algumas pessoas possuem baixa visão, cegueira ou outras
+        dificuldades visuais. Por isso, recursos de acessibilidade são
+        importantes para garantir que todos possam estudar, trabalhar,
+        utilizar a internet e participar da sociedade.
+    </p>
+
+    <p>
+        A acessibilidade não significa apenas aumentar o tamanho das
+        letras. Ela envolve contraste, iluminação, organização das
+        informações, áudio, descrição de imagens, navegação pelo teclado
+        e compatibilidade com tecnologias assistivas.
+    </p>
+
+</section>
+
+
+
+<!-- BAIXA VISÃO -->
+
+<section
+    class="mb-5"
+    aria-labelledby="baixa-visao"
+>
+
+    <h2 id="baixa-visao">
+        O que é baixa visão?
+    </h2>
+
+    <p>
+        Baixa visão é uma condição em que a capacidade visual permanece
+        reduzida mesmo com o uso de recursos ópticos adequados, como
+        óculos ou lentes.
+    </p>
+
+    <p>
+        A intensidade e as características da dificuldade visual podem
+        variar bastante de uma pessoa para outra. Algumas pessoas podem
+        apresentar dificuldade para enxergar textos pequenos, identificar
+        detalhes, perceber contrastes ou enxergar em ambientes com pouca
+        iluminação.
+    </p>
+
+    <div class="alert alert-info">
+
+        <strong>Importante:</strong>
+
+        cada pessoa possui necessidades diferentes. Os recursos devem ser
+        escolhidos de acordo com as necessidades individuais e, quando
+        necessário, com orientação de profissionais especializados.
+
+    </div>
+
+</section>
+
+
+
+<!-- RECURSOS -->
+
+<section
+    class="mb-5"
+    aria-labelledby="recursos"
+>
+
+    <h2 id="recursos" class="mb-4">
+        Recursos de acessibilidade
+    </h2>
+
+
+    <div class="row g-4">
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        🔎 Aumento da fonte
+                    </h3>
+
+                    <p>
+                        Aumentar o tamanho das letras pode facilitar a
+                        leitura para pessoas que possuem dificuldade para
+                        visualizar textos pequenos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        ⚫ Alto contraste
+                    </h3>
+
+                    <p>
+                        O contraste adequado entre texto e fundo ajuda a
+                        diferenciar os elementos da página e pode melhorar
+                        a legibilidade.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        🔊 Leitura em voz alta
+                    </h3>
+
+                    <p>
+                        A conversão de texto em fala permite que conteúdos
+                        sejam ouvidos em vez de depender somente da visão.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        ⌨️ Navegação pelo teclado
+                    </h3>
+
+                    <p>
+                        Um site acessível deve permitir que seus principais
+                        controles sejam utilizados sem depender do mouse.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        🖼️ Descrição de imagens
+                    </h3>
+
+                    <p>
+                        Textos alternativos ajudam pessoas que utilizam
+                        leitores de tela a compreender o conteúdo das
+                        imagens.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="col-md-6 col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body">
+
+                    <h3>
+                        📱 Tecnologia assistiva
+                    </h3>
+
+                    <p>
+                        Leitores de tela, ampliadores, comandos de voz e
+                        outros recursos podem facilitar o uso de
+                        computadores e celulares.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- COMO MELHORAR -->
+
+<section
+    class="mb-5"
+    aria-labelledby="melhorar"
+>
+
+    <h2 id="melhorar">
+        Como melhorar a acessibilidade?
+    </h2>
+
+    <p>
+        Existem diversas maneiras de tornar um ambiente digital mais
+        acessível.
+    </p>
+
+    <ul class="lista-acessibilidade">
+
+        <li>
+            Utilizar fontes fáceis de ler e tamanho adequado.
+        </li>
+
+        <li>
+            Utilizar cores com bom contraste.
+        </li>
+
+        <li>
+            Evitar colocar informações importantes somente por meio de
+            cores.
+        </li>
+
+        <li>
+            Adicionar texto alternativo às imagens.
+        </li>
+
+        <li>
+            Organizar os conteúdos utilizando títulos e subtítulos.
+        </li>
+
+        <li>
+            Permitir navegação pelo teclado.
+        </li>
+
+        <li>
+            Oferecer alternativas em áudio quando possível.
+        </li>
+
+        <li>
+            Evitar textos muito pequenos e páginas visualmente
+            carregadas.
+        </li>
+
+        <li>
+            Testar o site utilizando ferramentas de acessibilidade.
+        </li>
+
+        <li>
+            Considerar a opinião de pessoas com deficiência durante o
+            desenvolvimento.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- DICAS PARA CELULAR -->
+
+<section
+    class="mb-5"
+    aria-labelledby="celular"
+>
+
+    <h2 id="celular">
+        Acessibilidade no celular
+    </h2>
+
+    <p>
+        Smartphones possuem vários recursos que podem ajudar pessoas com
+        baixa visão ou outras dificuldades visuais.
+    </p>
+
+    <div class="row g-4">
+
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <h3>
+                        Zoom
+                    </h3>
+
+                    <p>
+                        O recurso de ampliação permite aumentar partes da
+                        tela para facilitar a visualização.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <h3>
+                        Texto maior
+                    </h3>
+
+                    <p>
+                        A configuração de tamanho do texto pode facilitar
+                        a leitura de mensagens, aplicativos e páginas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body">
+
+                    <h3>
+                        Comandos de voz
+                    </h3>
+
+                    <p>
+                        Comandos de voz podem ajudar o usuário a realizar
+                        determinadas tarefas sem precisar interagir
+                        diretamente com todos os elementos visuais.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TECNOLOGIA -->
+
+<section
+    class="mb-5"
+    aria-labelledby="tecnologia"
+>
+
+    <h2 id="tecnologia">
+        Tecnologia e inclusão
+    </h2>
+
+    <p>
+        A tecnologia pode contribuir para aumentar a independência das
+        pessoas com deficiência visual.
+    </p>
+
+    <p>
+        Aplicações modernas podem utilizar câmeras, inteligência
+        artificial, reconhecimento de texto e síntese de voz para
+        identificar informações presentes no ambiente e apresentá-las de
+        uma maneira acessível.
+    </p>
+
+    <p>
+        Um exemplo seria uma aplicação capaz de utilizar a câmera de um
+        celular para reconhecer um texto e posteriormente reproduzi-lo
+        em áudio.
+    </p>
+
+</section>
+
+
+
+<!-- COMO POSSO AJUDAR -->
+
+<section
+    class="mb-5 p-4 rounded bg-light"
+    aria-labelledby="ajudar"
+>
+
+    <h2 id="ajudar">
+        Como posso ajudar?
+    </h2>
+
+    <p>
+        A construção de uma sociedade mais acessível depende da
+        participação de todos.
+    </p>
+
+    <ol>
+
+        <li>
+            Aprenda sobre acessibilidade.
+        </li>
+
+        <li>
+            Desenvolva sites pensando em diferentes usuários.
+        </li>
+
+        <li>
+            Descreva imagens e informações importantes.
+        </li>
+
+        <li>
+            Teste seus projetos com recursos de acessibilidade.
+        </li>
+
+        <li>
+            Escute as necessidades das pessoas com deficiência.
+        </li>
+
+        <li>
+            Compartilhe conhecimento sobre inclusão digital.
+        </li>
+
+    </ol>
+
+</section>
+
+
+
+<!-- OBJETIVO -->
+
+<section
+    class="mb-5"
+    aria-labelledby="objetivo"
+>
+
+    <h2 id="objetivo">
+        Objetivo do projeto
+    </h2>
+
+    <p>
+        Este projeto tem como objetivo demonstrar que a tecnologia pode
+        ser utilizada como ferramenta de inclusão.
+    </p>
+
+    <p>
+        Por meio de HTML, CSS, JavaScript e recursos de acessibilidade,
+        podemos criar experiências digitais mais inclusivas e fáceis de
+        utilizar.
+    </p>
+
+</section>
+
+</main> <footer class="bg-primary text-white text-center p-4">
+<p class="mb-0">
+    Projeto Integrador • Acesso à Visão • Acessibilidade Digital • 2026
+</p>
+
+</footer> <script src="script.js"></script> </body> </html>
+<div class="container">
+
+    <h1 class="text-center">
+        Acesso à Visão
+    </h1>
+
+    <p class="text-center fs-5">
+        Informação, inclusão e acessibilidade para todos
+    </p>
+
+
+    <div
+        class="d-flex justify-content-center gap-2 flex-wrap mt-3"
+        aria-label="Ferramentas de acessibilidade"
+    >
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="aumentarFonte()"
+        >
+            A+
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="diminuirFonte()"
+        >
+            A-
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-warning"
+            onclick="alternarContraste()"
+        >
+            Alto Contraste
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-success"
+            onclick="lerPagina()"
+        >
+            🔊 Ouvir Página
+        </button>
+
+    </div>
+
+</div>
