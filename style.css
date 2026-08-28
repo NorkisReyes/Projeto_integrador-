@@ -1,0 +1,254 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho */
+.header-acessibilidade {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+}
+
+.sub-topo {
+    background-color: #0056b3;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.conteudo-topo {
+    padding: 30px 20px;
+}
+
+.conteudo-topo h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.conteudo-topo p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Botões de Acessibilidade */
+.botoes-acessibilidade {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.botoes-acessibilidade button {
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-texto {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-alerta {
+    background-color: #ffc107;
+    color: #000000;
+}
+
+.btn-sucesso {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+/* Seções de Conteúdo Principal */
+.conteudo-principal {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.secao-optica h2 {
+    color: #0056b3;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.secao-acesso-visao, .secao-baixa-visao {
+    margin-top: 40px;
+}
+
+.secao-acesso-visao h2, .secao-baixa-visao h2 {
+    color: #1a1a1a;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.conteudo-principal p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Bloco Informativo de Destaque */
+.alerta-importante {
+    background-color: #e0f7fa;
+    border-left: 5px solid #00acc1;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 35px;
+}
+
+.alerta-importante p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #004d40;
+    margin-bottom: 0;
+}
+
+/* Grid de Cards */
+.secao-recursos {
+    margin-top: 50px;
+}
+
+.secao-recursos h2 {
+    color: #1a1a1a;
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Cartões Individuais */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Rodapé */
+.rodape-site {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.rodape-site p {
+    font-size: 14px;
+    margin: 0;
+    word-spacing: 2px;
+}
+
+/* ========================================================
+   ESTILOS ADAPTADOS PARA ALTO CONTRASTE (Ativado via JS)
+   ======================================================== */
+body.alto-contraste {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+}
+
+body.alto-contraste .header-acessibilidade,
+body.alto-contraste .sub-topo {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #ffff00;
+}
+
+body.alto-contraste button {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body.alto-contraste .secao-optica h2,
+body.alto-contraste .secao-acesso-visao h2,
+body.alto-contraste .secao-baixa-visao h2,
+body.alto-contraste .secao-recursos h2 {
+    color: #ffff00 !important;
+}
+
+body.alto-contraste .conteudo-principal p {
+    color: #ffffff !important;
+}
+
+body.alto-contraste .alerta-importante {
+    background-color: #000000 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.alto-contraste .alerta-importante p {
+    color: #ffffff !important;
+}
+
+body.alto-contraste .card {
+    background-color: #000000 !important;
+    border: 2px solid #ffff00 !important;
+    box-shadow: none;
+}
+
+body.alto-contraste .card h3 {
+    color: #ffff00 !important;
+}
+
+body.alto-contraste .card p {
+    color: #ffffff !important;
+}
+
+body.alto-contraste .rodape-site {
+    background-color: #000000 !important;
+    border-top: 2px solid #ffff00;
+}
+
+body.alto-contraste .rodape-site p {
+    color: #ffffff !important;
+}
