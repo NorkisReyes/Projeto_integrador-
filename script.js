@@ -1,47 +1,62 @@
-// Controle de Tamanho de Fonte
-let tamanhoAtual = 16;
-const limiteMaximo = 26;
-const limiteMinimo = 14;
+const htmlElement = document.documentElement;
+const bodyElement = document.body;
+const btnAumentar = document.getElementById('btn-aumentar');
+const btnDiminuir = document.getElementById('btn-diminuir');
+const btnContraste = document.getElementById('btn-contraste');
+const btnOuvir = document.getElementById('btn-ouvir');
 
-document.getElementById('btn-aumentar').addEventListener('click', () => {
-    if (tamanhoAtual < limiteMaximo) {
-        tamanhoAtual += 2;
-        document.body.style.fontSize = tamanhoAtual + 'px';
-        
-        // Ajusta proporcionalmente os títulos dinâmicos
-        document.querySelectorAll('h2').forEach(h2 => {
-            h2.style.fontSize = (tamanhoAtual + 14) + 'px';
-        });
+let tamanhoAtual = parseInt(localStorage.getItem('fontSizeTamanho')) || 100;
+const contrasteSalvo = localStorage.getItem('altoContrasteAtivo');
+
+function aplicarConfiguracoesIniciais() {
+    htmlElement.style.fontSize = `${tamanhoAtual}%`;
+    if (contrasteSalvo === 'true') {
+        bodyElement.classList.add('alto-contraste');
+    }
+}
+aplicarConfiguracoesIniciais();
+
+btnAumentar.addEventListener('click', () => {
+    if (tamanhoAtual < 150) { 
+        tamanhoAtual += 10;
+        htmlElement.style.fontSize = `${tamanhoAtual}%`;
+        localStorage.setItem('fontSizeTamanho', tamanhoAtual);
     }
 });
 
-document.getElementById('btn-diminuir').addEventListener('click', () => {
-    if (tamanhoAtual > limiteMinimo) {
-        tamanhoAtual -= 2;
-        document.body.style.fontSize = tamanhoAtual + 'px';
-        
-        // Diminui proporcionalmente os títulos
-        document.querySelectorAll('h2').forEach(h2 => {
-            h2.style.fontSize = (tamanhoAtual + 14) + 'px';
-        });
+btnDiminuir.addEventListener('click', () => {
+    if (tamanhoAtual > 80) { 
+        tamanhoAtual -= 10;
+        htmlElement.style.fontSize = `${tamanhoAtual}%`;
+        localStorage.setItem('fontSizeTamanho', tamanhoAtual);
     }
 });
 
-// Alternar Alto Contraste
-document.getElementById('btn-contraste').addEventListener('click', () => {
-    document.body.classList.toggle('alto-contraste');
+btnContraste.addEventListener('click', () => {
+    bodyElement.classList.toggle('alto-contraste');
+    const estaAtivo = bodyElement.classList.contains('alto-contraste');
+    localStorage.setItem('altoContrasteAtivo', estaAtivo);
 });
 
-// Recurso de Leitura de Tela básico (Web Speech API)
-document.getElementById('btn-ouvir').addEventListener('click', () => {
-    const textoParaLer = document.querySelector('.conteudo-principal').innerText;
-    const utterance = new SpeechSynthesisUtterance(textoParaLer);
-    utterance.lang = 'pt-BR';
+btnOuvir.addEventListener('click', () => {
+    window.speechSynthesis.cancel();
+    let textoParaLer = document.getElementById('conteudo-principal').innerText;
     
-    // Cancela se já estiver lendo, ou inicia uma nova leitura
-    if (window.speechSynthesis.speaking) {
-        window.speechSynthesis.cancel();
-    } else {
-        window.speechSynthesis.speak(utterance);
-    }
+    const cardsVirados = document.querySelectorAll('.flashcard.flipped .card-back');
+    cardsVirados.forEach(card => {
+        textoParaLer += " . Conteúdo ativado: " + card.innerText;
+    });
+
+    const utterance = new SpeechSynthesisUtterance(textoParaLer);
+    utterance.lang = 'pt-BR'; 
+    utterance.rate = 1.0;     
+    window.speechSynthesis.speak(utterance);
 });
+
+// FUNÇÃO ATUALIZADA: CONTROLADORA DE FLUXO SEGURO
+function virarCard(card) {
+    card.classList.toggle('flipped');
+    const estaVirado = card.classList.contains('flipped');
+    card.setAttribute('aria-expanded', estaVirado);
+}
+
